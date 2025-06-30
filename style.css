@@ -91,7 +91,7 @@ body {
 .header {
     /* height: auto;
 padding: 2rem !important; */
-   
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 3fr));
     /* display: flex; */
@@ -131,7 +131,7 @@ padding: 2rem !important; */
 .header div {
     /* max-width: 200px; */
     color: white;
-     /* max-width: 500px !important; */
+    /* max-width: 500px !important; */
     /* margin: auto; */
     margin: auto;
     text-decoration: none;
@@ -221,8 +221,8 @@ main.loading {
     /* transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); */
     transform: scale(1.1);
-  z-index: 10;
-  position: relative;
+    z-index: 10;
+    position: relative;
     /* z-index: 99999; */
 }
 
@@ -289,6 +289,7 @@ main.loading {
     /* Re-implementing CSS ping-pong animation */
     animation: pingPongScroll 40s linear infinite alternate;
     /* max-width: 95%; */
+
 }
 
 /* Pause animation on hover or when card has .paused class */
@@ -330,6 +331,40 @@ main.loading {
         animation: pingPongScrollVertical 30s infinite alternate;
         /* Stack images vertically */
         flex-direction: column;
+        overflow: hidden;
+        /* hide scroll initially */
+        position: relative;
+    }
+
+
+    /* === ADDED HOVER SCROLLBAR EFFECT === */
+    /* On hover, change overflow to allow manual scrolling */
+    .card:hover .card-gallery {
+        overflow-y: auto;
+    }
+
+    /* Custom Webkit Scrollbar Styles for a better look */
+    .card-gallery::-webkit-scrollbar {
+        /* height: 8px; */
+        width: 8px;
+        /* Height of the horizontal scrollbar */
+    }
+
+    .card-gallery::-webkit-scrollbar-track {
+        background: #2a2a2a;
+        /* Track color, same as card background */
+        border-radius: 4px;
+    }
+
+    .card-gallery::-webkit-scrollbar-thumb {
+        background: #555;
+        /* Scroller color */
+        border-radius: 4px;
+    }
+
+    .card-gallery::-webkit-scrollbar-thumb:hover {
+        background: #777;
+        /* Scroller color on hover */
     }
 
     .card-gallery {
@@ -340,7 +375,7 @@ main.loading {
         /* Reset properties from desktop view */
         white-space: normal;
         /* padding: 1rem; */
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
 
     .card-gallery iframe {
@@ -352,15 +387,32 @@ main.loading {
     }
 
     /* New keyframe animation for vertical scrolling */
-    @keyframes pingPongScrollVertical {
+    /* @keyframes scrollUp {
         0% {
-            transform: translateY(0%);
+            transform: translateY(0);
         }
 
         100% {
-            transform: translateY(-350%);
+            transform: translateY(-50%);
+        }
+
+    } */
+
+    @keyframes pingPongScrollVertical {
+        0% {
+            transform: translateY(11%);
+        }
+
+        100% {
+            transform: translateY(-400%);
         }
 
         /* 400px is the max-height of card-gallery */
     }
+/* 
+    .scrolling-gallery:after {
+        content: "";
+        display: block;
+        height: 50%;
+    } */
 }
