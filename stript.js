@@ -170,7 +170,7 @@ function hideImageModal() {
      * @param {HTMLElement} activeLink - The link that should be marked as active.
      */
     function updateActiveLink(activeLink) {
-        document.querySelectorAll('header div a').forEach(link => {
+        document.querySelectorAll('header div li a').forEach(link => {
             link.classList.remove('active');
         });
         if (activeLink) {
@@ -180,6 +180,6 @@ function hideImageModal() {
 
     // Load the home page by default when the application starts
     document.addEventListener('DOMContentLoaded', () => {
-        const homeLink = document.querySelector('header div a');
+        const homeLink = document.querySelector('header div li a');
         loadPage('home.html', homeLink);
     });
