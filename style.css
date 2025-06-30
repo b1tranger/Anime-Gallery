@@ -129,12 +129,16 @@
         .scrolling-gallery.paused {
             animation-play-state: paused;
         }
-
-        .card-gallery img {
-            height: 180px; /* Fixed height for consistency */
-            width: auto;
+        
+        /* === UPDATED RULE === */
+        /* This rule gives the iframes a fixed size, ensuring the animation loops seamlessly. */
+        .card-gallery iframe {
+            height: 180px;
+            width: 320px;
             margin: 0 0.5rem;
             border-radius: 4px;
+            border: none;
+            flex-shrink: 0; /* Prevents iframes from shrinking inside the flex container */
         }
 
         /* Generic Text styles for other pages */
@@ -149,9 +153,7 @@
                 transform: translateX(0);
             }
             100% {
-                /* The -50% value is used because the image set is duplicated once */
+                /* The -50% value is used because the content set is duplicated once */
                 transform: translateX(-50%);
             }
         }
-
-    
