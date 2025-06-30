@@ -327,37 +327,38 @@ main.loading {
 @media (max-width: 450px) {
     .scrolling-gallery {
         /* Apply new vertical animation */
-        animation: pingPongScrollVertical 40s linear infinite alternate;
+        animation: pingPongScrollVertical 30s infinite alternate;
         /* Stack images vertically */
         flex-direction: column;
     }
 
     .card-gallery {
         /* Keep overflow hidden for animation */
-        overflow: hidden;
+        /* overflow: hidden; */
         /* Give it a max height to create a scrollable area */
         max-height: 350px;
         /* Reset properties from desktop view */
         white-space: normal;
         /* padding: 1rem; */
+        overflow-y: scroll;
     }
 
-    .card-gallery img {
+    .card-gallery iframe {
         /* Make images fill the width of the card */
         width: 100%;
-        height: auto;
+        /* height: auto; */
         /* Add space between stacked images */
-        margin: 0 0 1rem 0;
+        margin: 0 0 0.5rem 0;
     }
 
     /* New keyframe animation for vertical scrolling */
     @keyframes pingPongScrollVertical {
         0% {
-            transform: translateY(0);
+            transform: translateY(0%);
         }
 
         100% {
-            transform: translateY(calc(-100% + 400px));
+            transform: translateY(-350%);
         }
 
         /* 400px is the max-height of card-gallery */
