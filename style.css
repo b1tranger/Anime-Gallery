@@ -1,3 +1,63 @@
+
+
+
+
+/* Full Page Gallery Styles */
+.full-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.full-gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.full-gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+#gallery-loader {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 3rem;
+}
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+.image-modal.visible {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------- */
+
+
+
 /* CSS is included here for a self-contained example */
 /* General Body Styles */
 body {
@@ -59,23 +119,25 @@ body {
     color: white;
 } */
 .non-flex-wrapper {
-  display: block; /* or inline-block, etc. */
+    display: block;
+    /* or inline-block, etc. */
 }
 
 .header nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        .header nav a:hover, .header nav a.active {
-            background-color: #007bff;
-            color: white;
-        }
+.header nav a:hover,
+.header nav a.active {
+    background-color: #007bff;
+    color: white;
+}
 
 /* Main Content Styles */
 main {
@@ -150,6 +212,36 @@ main.loading {
     /* Prevent items from wrapping */
 }
 
+
+/* === ADDED HOVER SCROLLBAR EFFECT === */
+/* On hover, change overflow to allow manual scrolling */
+.card:hover .card-gallery {
+    overflow-x: auto;
+}
+
+/* Custom Webkit Scrollbar Styles for a better look */
+.card-gallery::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the horizontal scrollbar */
+}
+
+.card-gallery::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    /* Track color, same as card background */
+    border-radius: 4px;
+}
+
+.card-gallery::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Scroller color */
+    border-radius: 4px;
+}
+
+.card-gallery::-webkit-scrollbar-thumb:hover {
+    background: #777;
+    /* Scroller color on hover */
+}
+
 .scrolling-gallery {
     display: flex;
     /* Re-implementing CSS ping-pong animation */
@@ -189,8 +281,4 @@ main.loading {
     }
 }
 
-@media only screen and (max-width: 600px) {
-
-
-
-}
+@media only screen and (max-width: 600px) {}
