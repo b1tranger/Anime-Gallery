@@ -331,9 +331,10 @@ main.loading {
         animation: pingPongScrollVertical 30s infinite alternate;
         /* Stack images vertically */
         flex-direction: column;
-        overflow: hidden;
+        /* overflow:auto; */
         /* hide scroll initially */
         position: relative;
+
     }
 
 
@@ -341,12 +342,14 @@ main.loading {
     /* On hover, change overflow to allow manual scrolling */
     .card:hover .card-gallery {
         overflow-y: auto;
+    }.card .card-gallery {
+        overflow-y: auto;
     }
 
     /* Custom Webkit Scrollbar Styles for a better look */
     .card-gallery::-webkit-scrollbar {
         /* height: 8px; */
-        width: 8px;
+        width: 12px;
         /* Height of the horizontal scrollbar */
     }
 
@@ -398,7 +401,7 @@ main.loading {
 
     } */
 
-    @keyframes pingPongScrollVertical {
+    /* @keyframes pingPongScrollVertical {
         0% {
             transform: translateY(11%);
         }
@@ -407,8 +410,7 @@ main.loading {
             transform: translateY(-400%);
         }
 
-        /* 400px is the max-height of card-gallery */
-    }
+    } */
 /* 
     .scrolling-gallery:after {
         content: "";
