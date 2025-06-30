@@ -8,22 +8,32 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Screenshot Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="header">
-        <h1>My Gallery</h1>
-        <nav>
+        <!-- <div class="nav"> -->
+            <div class="non-flex-wrapper">
+            <nav>
             <!-- These links call the loadPage JavaScript function -->
-            <a onclick="loadPage('home', this)" class="active">Home</a>
-            <a onclick="loadPage('about', this)">About</a>
-            <a onclick="loadPage('contact', this)">Contact</a>
-        </nav>
+             <a onclick="loadPage('home', this)" class="active">Home</a>
+             <a onclick="loadPage('about', this)">About</a>
+             <a onclick="loadPage('contact', this)">Contact</a>
+            <!-- <ul>
+                <li> <a onclick="loadPage('home', this)" class="active">Home</a></li>
+                <li> <a onclick="loadPage('about', this)">About</a></li>
+                <li> <a onclick="loadPage('contact', this)">Contact</a></li>
+            </ul> -->
+            </nav>
+        </div>
+        </div>
     </header>
 
     <!-- The main content will be loaded here -->
@@ -35,4 +45,5 @@
 
     <script src="stript.js"></script>
 </body>
+
 </html>

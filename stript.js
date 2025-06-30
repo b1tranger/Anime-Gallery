@@ -54,7 +54,7 @@
      * @param {HTMLElement} activeLink - The link that should be marked as active.
      */
     function updateActiveLink(activeLink) {
-        document.querySelectorAll('header nav a').forEach(link => {
+        document.querySelectorAll('header div nav a').forEach(link => {
             link.classList.remove('active');
         });
         if (activeLink) {
@@ -64,6 +64,6 @@
 
     // Load the home page by default when the application starts
     document.addEventListener('DOMContentLoaded', () => {
-        const homeLink = document.querySelector('header nav a');
+        const homeLink = document.querySelector('header div nav a');
         loadPage('home.html', homeLink);
     });
