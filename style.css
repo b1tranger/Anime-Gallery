@@ -257,7 +257,10 @@ main.loading {
 
 /* === ADDED HOVER SCROLLBAR EFFECT === */
 /* On hover, change overflow to allow manual scrolling */
-.card:hover .card-gallery {
+/* .card:hover .card-gallery {
+    overflow-x: auto;
+} */
+.card .card-gallery {
     overflow-x: auto;
 }
 
@@ -325,24 +328,26 @@ main.loading {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 420px) {
     .scrolling-gallery {
         /* Apply new vertical animation */
-        animation: pingPongScrollVertical 30s infinite alternate;
+        /* animation: pingPongScrollVertical 30s infinite alternate; */
         /* Stack images vertically */
         flex-direction: column;
         /* overflow:auto; */
         /* hide scroll initially */
         position: relative;
-
+        animation: none;
     }
 
 
     /* === ADDED HOVER SCROLLBAR EFFECT === */
     /* On hover, change overflow to allow manual scrolling */
-    .card:hover .card-gallery {
+    /* .card:hover .card-gallery {
         overflow-y: auto;
-    }.card .card-gallery {
+    } */
+
+    .card .card-gallery {
         overflow-y: auto;
     }
 
@@ -407,11 +412,11 @@ main.loading {
         }
 
         100% {
-            transform: translateY(-400%);
+            transform: translateY(-380%);
         }
 
     } */
-/* 
+    /* 
     .scrolling-gallery:after {
         content: "";
         display: block;

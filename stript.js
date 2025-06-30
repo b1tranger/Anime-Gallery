@@ -1,3 +1,17 @@
+// "fake" activity to keep the iframe active in memory.
+
+ const iframe = document.getElementById('myFrame');
+
+  // Send a "keep-alive" ping every 15 seconds
+  setInterval(() => {
+    if (iframe.contentWindow) {
+      iframe.contentWindow.postMessage("keep-alive", "*");
+    }
+  }, 15000);
+
+// ------------------------------------
+
+
 /**
  * Toggles the pause state of the gallery animation on click.
  * @param {HTMLElement} card - The card element that was clicked.
