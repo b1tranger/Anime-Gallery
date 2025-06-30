@@ -1,3 +1,29 @@
+
+
+// MENU BUTTON FOR NAV BAR
+
+   const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const topNav = document.querySelector(".top-nav");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    topNav.classList.toggle("menu-open");
+  });
+
+
+
+
+
+// ------------------------------------
+
+
+
+
+
+
+
+
 // "fake" activity to keep the iframe active in memory.
 
  const iframe = document.getElementById('myFrame');
@@ -170,7 +196,7 @@ function hideImageModal() {
      * @param {HTMLElement} activeLink - The link that should be marked as active.
      */
     function updateActiveLink(activeLink) {
-        document.querySelectorAll('header div li a').forEach(link => {
+        document.querySelectorAll('header div a').forEach(link => {
             link.classList.remove('active');
         });
         if (activeLink) {
@@ -180,6 +206,6 @@ function hideImageModal() {
 
     // Load the home page by default when the application starts
     document.addEventListener('DOMContentLoaded', () => {
-        const homeLink = document.querySelector('header div li a');
+        const homeLink = document.querySelector('header div a');
         loadPage('home.html', homeLink);
     });
