@@ -83,7 +83,7 @@ body {
     padding: 1rem 2rem;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    /* z-index: 10; */
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -121,11 +121,11 @@ padding: 2rem !important; */
 }
 
 
-.header div:hover,
+/* .header div:hover,
 .header div.active {
     background-color: #007bff;
     color: white;
-}
+} */
 
 
 .header div {
@@ -196,7 +196,7 @@ main.loading {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 
-    overflow-x: auto;
+    /* overflow-x: auto; */
     /* direction: rtl; */
     margin: auto;
     /* display: flex; */
@@ -206,10 +206,11 @@ main.loading {
 
 /* Card Styles (for home.html) */
 .card {
+    /* padding:5px; */
     background-color: #2a2a2a;
-    border-radius: 8px;
+    border-radius: 10px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    overflow: show !important;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid #444;
@@ -217,14 +218,19 @@ main.loading {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+    /* transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); */
+    transform: scale(1.1);
+  z-index: 10;
+  position: relative;
+    /* z-index: 99999; */
 }
 
 .card-header {
     background: linear-gradient(to right, #007bff, #0056b3);
     color: white;
     padding: 1rem;
+    border-radius: 10px 10px 0 0;
 }
 
 .card-header h3 {
@@ -235,15 +241,17 @@ main.loading {
 .card-gallery {
     overflow: hidden;
     /* This acts as a mask for the scrolling content */
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
+
     display: flex;
     white-space: nowrap;
-    width: 95% !important;
+    width: 100% !important;
     /* Prevent items from wrapping */
 }
 
 .iframe {
-    width: 90%;
+    /* width: 90%; */
+    /* padding-right: -1rem !important; */
 }
 
 
@@ -328,10 +336,10 @@ main.loading {
         /* Keep overflow hidden for animation */
         overflow: hidden;
         /* Give it a max height to create a scrollable area */
-        max-height: 400px;
+        max-height: 350px;
         /* Reset properties from desktop view */
         white-space: normal;
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 
     .card-gallery img {
