@@ -319,7 +319,7 @@ main.loading {
 
     display: flex;
     white-space: nowrap;
-    width: 100% !important;
+    width: 100%;
     /* Prevent items from wrapping */
     height: 30vh;
     
