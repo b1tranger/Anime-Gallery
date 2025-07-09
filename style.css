@@ -368,7 +368,7 @@ main.loading {
     /* Re-implementing CSS ping-pong animation */
     animation: pingPongScroll 40s linear infinite alternate;
     /* max-width: 95%; */
-    height: 100% !important;
+    /* height: 100% !important; */
 
 }
 
